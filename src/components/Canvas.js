@@ -1,5 +1,6 @@
 import React from 'react';
 import Pixel from './Pixel';
+import styles from './Canvas.css'
 
 export default function Canvas() {
     let canvas = [];
@@ -8,25 +9,23 @@ export default function Canvas() {
     for (let i = 0; i < canvasSize; i++) {
         canvas[i] = [];
         for (let j = 0; j < canvasSize; j++) {
-          canvas[i][j] = 0;
+          canvas[i][j] = 3;
         }
     }
 
-    console.log(canvas);
-
     return (
-        <>
+        <div className='canvas'>
             {
                 canvas.map((row, rIndex) => (
                     <div>
                         {
                             row.map((col, cIndex) => (
-                                <Pixel value={canvas[rIndex][cIndex]} />
+                                <Pixel value={canvas[rIndex][cIndex]}/>// index={{ row:rIndex, col:cIndex }} />
                             ))
                         }
                     </div>
                 ))
             }
-        </>
+        </div>
     )
 }
