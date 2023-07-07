@@ -1,10 +1,11 @@
 import React from 'react';
-import Pixel from './components/Pixel';
+import Canvas from './components/Canvas';
+
 
 export default function App() {
     return (
         <div>
-            <Pixel />
+            <Canvas />
         </div>
     );
 }

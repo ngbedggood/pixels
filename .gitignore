@@ -7,3 +7,4 @@ logs
 .vscode
 .parcel-cache
 .cache
+.env
