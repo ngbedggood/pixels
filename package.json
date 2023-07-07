@@ -1,0 +1,35 @@
+{
+  "name": "pixels",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngbedggood/pixels.git"
+  },
+  "keywords": [
+    "pixels"
+  ],
+  "author": "Nathaniel Bedggood",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ngbedggood/pixels/issues"
+  },
+  "homepage": "https://github.com/ngbedggood/pixels#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.22.6",
+    "@babel/core": "^7.22.8",
+    "@babel/preset-env": "^7.22.7",
+    "@babel/preset-react": "^7.22.5",
+    "parcel": "^2.9.3",
+    "parcel-bundler": "^1.12.5"
+  }
+}
