@@ -1,26 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Pixel from './Pixel';
 import styles from './Canvas.css'
 
-export default function Canvas() {
-    let canvas = [];
-    let canvasSize = 8;
-
-    for (let i = 0; i < canvasSize; i++) {
-        canvas[i] = [];
-        for (let j = 0; j < canvasSize; j++) {
-          canvas[i][j] = 3;
-        }
-    }
+export default function Canvas({ canvasState, handlePaint }) {
 
     return (
         <div className='canvas'>
             {
-                canvas.map((row, rIndex) => (
+                canvasState.map((row, rIndex) => (
                     <div>
                         {
                             row.map((col, cIndex) => (
-                                <Pixel value={canvas[rIndex][cIndex]}/>// index={{ row:rIndex, col:cIndex }} />
+                                <Pixel 
+                                    value={canvasState[rIndex][cIndex]}
+                                    handleClick={handlePaint} 
+                                    index={{row:rIndex,col:cIndex}} 
+                                />
                             ))
                         }
                     </div>

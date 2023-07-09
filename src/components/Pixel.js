@@ -1,15 +1,8 @@
 import React, { useEffect } from 'react';
 import styles from './Pixel.css';
 
-export default function Pixel({ value }) {
+export default function Pixel({ value, isPalette, handleClick, index }) {
 
-    let gridColor;
-
-    /*useEffect(() => {
-        if (index.row%2===0 && index.col%2===0) {
-            gridColor = "whitesmoke";
-        }
-    }, [])*/
 
     const palette = [
         'white',
@@ -26,8 +19,8 @@ export default function Pixel({ value }) {
         <button 
             className='pixel' 
             style={{backgroundColor: palette[value]}}
+            onClick={()=>handleClick(value,index)}
         >
-            {value}
         </button>
     );
 
