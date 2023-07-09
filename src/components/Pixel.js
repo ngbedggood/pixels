@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styles from './Pixel.css';
 
-export default function Pixel({ value, isPalette, handleClick, index }) {
+export default function Pixel({ value, handleClick, index }) {
 
 
     const palette = [
