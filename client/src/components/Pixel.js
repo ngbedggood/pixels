@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import styles from './Pixel.css';
+import { Fade, Button } from '@mui/material';
 
 export default function Pixel({ value, handleClick, index }) {
 

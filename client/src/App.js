@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Canvas from './components/Canvas';
 import Palette from './components/Palette';
 import Pixel from './components/Pixel';
+import styles from './App.css';
+import Lobby from './components/Lobby';
 
 export default function App() {
     let canvasSize = 8;
@@ -20,13 +22,13 @@ export default function App() {
     }
 
     return (
-        <div>
-            <Palette handleSelect={handleSelectColor}/>
-            <h2>Current color: {selectedColor}</h2>
+        <div className='app'>
+            <Lobby />
+            <Palette handleSelect={handleSelectColor} currentColor={selectedColor}/>
             <Canvas 
                 canvasState={canvasState}
                 handlePaint={handlePaint}
             />
         </div>
-    );
+    );  
 }

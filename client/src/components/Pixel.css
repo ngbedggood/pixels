@@ -1,8 +1,6 @@
 .pixel {
-    background: #e6e6e6;
+    background: #f0f0f0;
     border: 1px solid #d3d3d3;
-    font-size: 24px;
-    font-weight: bold;
     color: #acacac;
     line-height: 34px;
     height: 34px;
@@ -10,5 +8,6 @@
     margin-top: -5px;
     padding: 0;
     text-align: center;
-    width: 34px;
+    max-width: 34px;
+    min-width: 34px;
 }

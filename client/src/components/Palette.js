@@ -1,8 +1,8 @@
 import React from 'react';
 import Pixel from './Pixel';
-import styles from './palette.css';
+import styles from './Palette.css';
 
-export default function Palette({handleSelect}) {
+export default function Palette({handleSelect, currentColor}) {
 
     const palette =[0,1,2,3,4,5,6,7];
     
@@ -13,6 +13,7 @@ export default function Palette({handleSelect}) {
                     <Pixel value={colorNum} handleClick={handleSelect}/>
                 ))
             }
+            <div>Current color: {currentColor}</div>
         </div>
     )
 
