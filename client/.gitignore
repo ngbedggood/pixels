@@ -8,7 +8,7 @@ logs
 .parcel-cache
 .cache
 .env
-client/build/
+build/
 .firebaserc
 firebase.json
 .firebase

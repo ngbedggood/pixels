@@ -1,0 +1,14 @@
+node_modules
+dist/
+.DS_*
+*.log
+logs
+
+.vscode
+.parcel-cache
+.cache
+.env
+build/
+.firebaserc
+firebase.json
+.firebase
