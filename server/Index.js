@@ -17,23 +17,43 @@ const io = new Server(server, {
 });
 
 
-let canvasState = [...Array(8)].map(e => Array(8).fill(null));
+let canvasState = []; //[...Array(8)].map(e => Array(8).fill(null));
 
 io.on('connection', (socket) => {
   console.log(`User connected ${socket.id}`);
 
   socket.on("create_lobby", (data) => {
-    socket.join(data.lobby);
-    console.log(data.lobby);
-    console.log(data.canvas);
-    canvasState = data.canvas;
-    socket.broadcast.emit('server_message', { message: 'Server has created the lobby room!'});
+    // Get user to leave existing lobby if there's one
+    console.log(Array.from(socket.rooms)[1]);
+    if (Array.from(socket.rooms)[1]) {
+      socket.leave(Array.from(socket.rooms)[1]);
+    }
+    // Force to string so they join the same room
+    l = `${data.lobby}`;
+    socket.join(l);
+    console.log(`User ${socket.id} created a lobby(${l}).`);
+    canvasState.push({ lobby: l, canvas: data.canvas});
+    //canvasState = data.canvas;
+    socket.emit('host_connect', { connected: (socket.rooms.has(l)) });
   });
 
   socket.on("join_lobby", (data) => {
+    // Get user to leave existing lobby if there's one
+    console.log(Array.from(socket.rooms)[1]);
+    if (Array.from(socket.rooms)[1]) {
+      socket.leave(Array.from(socket.rooms)[1]);
+    }
     socket.join(data.lobby);
-    console.log(data.lobby);
-    socket.broadcast.emit('send_canvas', { canvas: canvasState});
+    console.log(`User ${socket.id} joined lobby(${data.lobby}).`);
+    socket.emit('player_connect', { connected: true, lobby: data.lobby });
+    socket.emit('init_canvas', { canvas: canvasState.find(e => e.lobby === data.lobby).canvas });
+  });
+
+  socket.on("paint_pixel", (data) => {
+    console.log(`User ${socket.id} painted a pixel in room(${data.lobby}).`);
+    canvasState.find(e => e.lobby === data.lobby).canvas[data.index.row][data.index.col] = data.color;
+    io.in(data.lobby).emit('send_canvas', { canvas: canvasState.find(e => e.lobby === data.lobby).canvas });
+    console.log(socket.rooms);
   });
 
 });
