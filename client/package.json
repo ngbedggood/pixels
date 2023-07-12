@@ -2,11 +2,11 @@
   "name": "pixels",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "source": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel index.html --open",
-    "build": "parcel build index.html --out-dir build --no-minify"
+    "build": "parcel build --dist-dir public"
   },
   "repository": {
     "type": "git",
