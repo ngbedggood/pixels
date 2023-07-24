@@ -1,6 +1,13 @@
-.app {
-    text-align: center;
-    font-family: 'Oxygen', sans-serif;
+.play {
+    width: 30%;
+    margin: auto;
+}
+
+.screen {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  font-family: 'Oxygen', sans-serif;
 }
 
 /* latin-ext */

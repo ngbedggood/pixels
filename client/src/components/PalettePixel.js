@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styles from './Pixel.css';
 import { Button } from '@mui/material';
 
-export default function Pixel({ value, handleClick, handleHover, index }) {
+export default function PalettePixel({ value, handleClick, index }) {
 
 
     const palette = [
@@ -21,7 +21,6 @@ export default function Pixel({ value, handleClick, handleHover, index }) {
         className='pixel'
         style={{backgroundColor: palette[value]}}
         onMouseDown={()=>handleClick(value,index)}
-        onMouseEnter={()=>handleHover(value,index)}
         >
         </button>
     );

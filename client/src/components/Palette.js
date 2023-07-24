@@ -1,5 +1,5 @@
 import React from 'react';
-import Pixel from './Pixel';
+import PalettePixel from './PalettePixel';
 import styles from './Palette.css';
 
 export default function Palette({handleSelect, currentColor}) {
@@ -10,7 +10,7 @@ export default function Palette({handleSelect, currentColor}) {
         <div className='palette'>
             {
                 palette.map((colorNum) => (
-                    <Pixel value={colorNum} handleClick={handleSelect}/>
+                    <PalettePixel value={colorNum} handleClick={handleSelect} />
                 ))
             }
             <div>Current color: {currentColor}</div>
