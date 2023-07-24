@@ -4,6 +4,10 @@ import { Button } from '@mui/material';
 
 export default function Pixel({ value, handleClick, handleHover, index }) {
 
+    useEffect(() => {
+        
+
+    }, [value]);
 
     const palette = [
         '#f2f2f2',
@@ -18,6 +22,7 @@ export default function Pixel({ value, handleClick, handleHover, index }) {
 
     return (
         <button 
+        key={value}
         className='pixel'
         style={{backgroundColor: palette[value]}}
         onMouseDown={()=>handleClick(value,index)}

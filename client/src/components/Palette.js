@@ -13,7 +13,7 @@ export default function Palette({handleSelect, currentColor}) {
                     <PalettePixel value={colorNum} handleClick={handleSelect} />
                 ))
             }
-            <div>Current color: {currentColor}</div>
+            {/*<div>Current color: {currentColor}</div>*/}
         </div>
     )
 
