@@ -7,6 +7,7 @@
     padding: 0;
     text-align: center;
     width: 12.5%;
+    min-width: 20px;
     border-radius: 0px;
     aspect-ratio: 1 / 1;
 

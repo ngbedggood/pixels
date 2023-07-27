@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Pixel.css';
 import { Button } from '@mui/material';
 
-export default function PalettePixel({ value, handleClick, index }) {
-
+export default function PalettePixel({ value, handleClick, index, selected }) {
 
     const palette = [
         '#f2f2f2',
@@ -19,9 +18,15 @@ export default function PalettePixel({ value, handleClick, index }) {
     return (
         <button 
         className='pixel'
-        style={{backgroundColor: palette[value]}}
-        onMouseDown={()=>handleClick(value,index)}
+        style={{
+            backgroundColor: palette[value], 
+            padding: selected ? '5px' : '1px',
+        }}
+        onMouseDown={()=> {
+            handleClick(value,index);
+        }}
         >
+        {/*selected?'hi':'no hi'*/}
         </button>
     );
 

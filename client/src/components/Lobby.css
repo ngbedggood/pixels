@@ -1,5 +1,19 @@
 .lobby {
-    left: 0;
-    right: 0;
     width: 100%;
+}
+
+.join-field {
+    width: 80%;
+}
+
+.join {
+    width: 20%;
+}
+
+.create-field {
+    width: 80%;
+}
+
+.create {
+    width: 20%;
 }
